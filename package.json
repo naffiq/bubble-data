@@ -1,0 +1,18 @@
+{
+  "name": "bubble-data",
+  "version": "0.0.1",
+  "description": "Countries and Citites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naffiq/bubble-data"
+  },
+  "author": "naffiq",
+  "license": "MIT",
+  "dependencies": {
+    "matter-js": "^0.10.0"
+  }
+}
