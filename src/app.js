@@ -1,3 +1,7 @@
-require('./js/bubble-engine');
+var BubbleEngine = require('./js/bubble-engine');
 
 require('./scss/main.scss');
+
+BubbleEngine({
+  data: [],
+});
