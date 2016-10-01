@@ -19,19 +19,27 @@ module.exports = {
   },
   module: {
       loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel', // 'babel-loader' is also a valid name to reference
-        query: {
-          presets: ['es2015']
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel', // 'babel-loader' is also a valid name to reference
+          query: {
+            presets: ['es2015']
+          }
+        },
+        {
+          test: /\.scss$/,
+          loaders: ["style", "css", "sass"]
+        },
+        {
+          test: /\.json$/,
+          loader: 'json',
+        },
+        {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: 'file?name=public/fonts/[name].[ext]'
         }
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }
-    ]
+      ]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.min-[hash:6].js'),
