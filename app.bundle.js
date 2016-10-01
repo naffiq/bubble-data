@@ -46,12 +46,11 @@ webpackJsonp([0],[
 
 	    var bubble = d3.layout.pack().sort(null).size([diameter, diameter]).padding(0);
 
-	    var zoom = d3.behavior.zoom().translate([diameter, diameter]).on("zoom", zoomed);
+	    var svg = d3.select("#data-map").append("svg").attr("width", "100%").attr("height", "100%").attr("class", "bubble").call(d3.behavior.zoom().on("zoom", function () {
+	        svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")");
+	    })).append("g");
 
-	    var svg = d3.select("#data-map").append("svg").attr("width", width).attr("height", height).attr("class", "bubble").attr("transform", "translate(" + 0 + "," + 0 + ")");
-
-	    var map = svg.append("g").append('rect').attr("width", width).attr("height", height).attr("id", "map").style("fill", options.background).style("pointer-events", "all").attr("transform", "translate(" + 0 + "," + 0 + ")").call(zoom);
-	    var node = svg.append("g").selectAll(".node").data(bubble.nodes(classes(options.data)).filter(function (d) {
+	    var node = svg.selectAll(".node").data(bubble.nodes(classes(options.data)).filter(function (d) {
 	        return !d.children;
 	    })).enter().append("g").attr("class", "node").attr("transform", function (d) {
 	        return "translate(" + d.x + "," + d.y + ")";
@@ -107,9 +106,6 @@ webpackJsonp([0],[
 	        return numeral(d.density).format('0,0') + " чел./км ";
 	    }
 
-	    function zoomed(scale, translate) {
-	        console.log('ok', scale);
-	    }
 	    // d3.select("#data-map").style("height", diameter + "px");
 	};
 
@@ -229,7 +225,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "html, body {\n  background: #FABE05;\n  padding: 0px;\n  margin: 0px;\n  font-family: 'Roboto', sans-serif; }\n\n#data-map {\n  width: 100%;\n  height: 100%; }\n  #data-map .node text {\n    fill: #FFF; }\n  #data-map g#map {\n    transform: translate(0, 0); }\n", ""]);
+	exports.push([module.id, "html, body {\n  background: #FABE05;\n  padding: 0px;\n  margin: 0px;\n  font-family: 'Roboto', sans-serif;\n  height: 100%;\n  width: 100%; }\n\n#data-map {\n  width: 100%;\n  height: 100%; }\n  #data-map .node text {\n    fill: #FFF; }\n", ""]);
 
 	// exports
 

@@ -14,7 +14,7 @@ module.exports = {
     vendor: Object.keys(pkg.dependencies),
   },
   output: {
-    path: './bin',
+    path: './',
     filename: 'app.bundle.js'
   },
   module: {
