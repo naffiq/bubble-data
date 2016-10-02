@@ -1,5 +1,5 @@
 # bubble-data
-Countries and cities
+Visualization of countries domographic data with D3.js. See the [DEMO here](https://naffiq.github.io/bubble-data/).
 
 # Links 
-* Design - https://projects.invisionapp.com/share/VF8SRWOGN
+* [Invision prototype](https://projects.invisionapp.com/share/VF8SRWOGN)
