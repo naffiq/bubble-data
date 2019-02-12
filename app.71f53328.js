@@ -15,4 +15,4 @@ module.exports={name:"Countries",children:[{name:"Burundi",population:11179,dens
 },{}],"vZyd":[function(require,module,exports) {
 var r=require("./js/bubble-engine");require("./scss/main.scss");var e=require("./data/countries.json");new r({data:e,color1:"#FFC51B",color2:"#FF4817",background:"#FABE05"});
 },{"./js/bubble-engine":"v78u","./scss/main.scss":"D3vG","./data/countries.json":"6+wm"}]},{},["vZyd"], null)
-//# sourceMappingURL=/app.71f53328.map
+//# sourceMappingURL=/bubble-data/app.71f53328.map
