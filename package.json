@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "deploy": "parcel build index.html && gh-pages -d dist"
+    "build": "rm -rf dist && parcel build index.html --public-url /bubble-data/",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
